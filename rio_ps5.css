@@ -1,46 +1,38 @@
-body { background: transparent !important; }
+/* Rio PS5 style static skin for Gamepad Viewer */
+/* This shows a controller image and hides the default button pieces */
 
-.edit .controller {
-position: relative !important;
-filter: grayscale(1) brightness(0.85) contrast(1.05) !important;
+.controller.custom{
+  width: 900px;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  filter: grayscale(1) brightness(0.9) contrast(1.05);
+  opacity: 1;
+  position: relative;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'><rect width='900' height='600' fill='none'/><path d='M110 310c0-110 70-190 190-190h300c120 0 190 80 190 190s-70 190-190 190H300c-120 0-190-80-190-190z' fill='%23070707'/><path d='M150 310c0-80 50-140 140-140h320c90 0 140 60 140 140s-50 140-140 140H290c-90 0-140-60-140-140z' fill='%237a1f4a' opacity='0.22'/><path d='M210 220c-30 20-55 55-55 90s25 70 55 90' fill='none' stroke='%23ffffff' opacity='0.10' stroke-width='10' stroke-linecap='round'/><path d='M690 220c30 20 55 55 55 90s-25 70-55 90' fill='none' stroke='%23ffffff' opacity='0.10' stroke-width='10' stroke-linecap='round'/><rect x='300' y='220' width='300' height='120' rx='22' fill='%23101010' stroke='%23ffffff' stroke-opacity='0.10' stroke-width='3'/><text x='450' y='292' text-anchor='middle' font-family='Arial' font-size='54' letter-spacing='2' fill='%237a1f4a'>Rio</text><circle cx='260' cy='345' r='34' fill='%23ffffff' opacity='0.14'/><circle cx='260' cy='345' r='20' fill='%23070707'/><circle cx='650' cy='265' r='18' fill='%23ffffff' opacity='0.22'/><circle cx='685' cy='300' r='18' fill='%23ffffff' opacity='0.22'/><circle cx='650' cy='335' r='18' fill='%23ffffff' opacity='0.22'/><circle cx='615' cy='300' r='18' fill='%23ffffff' opacity='0.22'/></svg>");
 }
 
-.edit .controller::before {
-content: "";
-position: absolute;
-inset: 0;
-background: rgba(0,0,0,0.55);
-pointer-events: none;
-z-index: 9998;
+/* 65% “black and white filter” feel, plus dark overlay */
+.controller.custom::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  pointer-events: none;
 }
 
-.edit .controller::after {
-content: "";
-position: absolute;
-inset: 0;
-background: rgba(122,31,74,0.22);
-pointer-events: none;
-z-index: 9999;
-}
-
-.edit .controller .touchpad,
-.edit .controller .pad,
-.edit .controller .trackpad {
-position: relative !important;
-}
-
-.edit .controller .touchpad::after,
-.edit .controller .pad::after,
-.edit .controller .trackpad::after {
-content: "Rio";
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%,-50%);
-font-family: Arial, sans-serif;
-font-size: 40px;
-letter-spacing: 2px;
-color: rgba(122,31,74,1);
-text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-pointer-events: none;
+/* hide default pieces so only the SVG shows */
+.custom .triggers,
+.custom .bumpers,
+.custom .sticks,
+.custom .dpad,
+.custom .abxy,
+.custom .arrows,
+.custom .quadrant,
+.custom .touchpad,
+.custom .misc,
+.custom .fstick,
+.custom div{
+  display: none;
 }
