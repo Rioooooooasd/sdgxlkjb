@@ -10,31 +10,6 @@ body {
   height: 651px;
   margin-left: 0;
   margin-top: 0;
-  position: relative;
-
-  /* your filter look */
-  filter: grayscale(1) brightness(0.9) contrast(1.05);
-  opacity: 0.65;
-}
-
-/* darken */
-.controller.xbox::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  pointer-events: none;
-  z-index: 50;
-}
-
-/* dark pink tint */
-.controller.xbox::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(122,31,74,0.22);
-  pointer-events: none;
-  z-index: 51;
 }
 
 .xbox .sticks {
@@ -43,13 +18,21 @@ body {
   left: 220px;
   top: 333px;
 }
+
 .xbox .stick {
   background: url(https://i.imgur.com/nXaGdI2.png);
   width: 100px;
   height: 100px;
 }
-.xbox .stick.pressed { background-position: -102px 0; }
-.xbox .stick.right { top: 0; left: 267px; }
+
+.xbox .stick.pressed {
+  background-position: -102px 0;
+}
+
+.xbox .stick.right {
+  top: 0;
+  left: 267px;
+}
 
 .xbox .abxy {
   width: 181px;
@@ -57,29 +40,65 @@ body {
   left: 573px;
   top: 178px;
 }
+
 .xbox .button {
   background: url(https://i.imgur.com/DVqDSsJ.png);
   width: 58px;
   height: 58px;
 }
-.xbox .button.pressed { background-position-y: -59px; margin-top: 0; }
 
-.xbox .a { background-position: 0 0; left: 61px; top: 123px; }
-.xbox .b { background-position: -59px 0; left: 123px; top: 62px; }
-.xbox .x { background-position: -118px 0; left: 0px; top: 61px; }
-.xbox .y { background-position: -177px 0; left: 61px; top: 0px; }
+.xbox .button.pressed {
+  background-position-y: -59px;
+  margin-top: 0;
+}
 
-.xbox .arrows { left: 195px; top: 140px; width: 416px; height: 57px; }
-.xbox .quadrant { display: none; }
+.xbox .a {
+  background-position: 0 0;
+  left: 61px;
+  top: 123px;
+}
 
-.xbox .back, .xbox .start {
-  /* FIXED: must be i.imgur.com */
+.xbox .b {
+  background-position: -59px 0;
+  left: 123px;
+  top: 62px;
+}
+
+.xbox .x {
+  background-position: -118px 0;
+  left: 0px;
+  top: 61px;
+}
+
+.xbox .y {
+  background-position: -177px 0;
+  left: 61px;
+  top: 0px;
+}
+
+.xbox .arrows {
+  left: 195px;
+  top: 140px;
+  width: 416px;
+  height: 57px;
+}
+
+.xbox .quadrant {
+  display: none;
+}
+
+.xbox .back,
+.xbox .start {
   background: url(https://i.imgur.com/jJhnjvL.png);
   width: 27px;
   height: 57px;
   opacity: 0;
 }
-.xbox .start { background-position: 27px 0; float: right; }
+
+.xbox .start {
+  background-position: 27px 0;
+  float: right;
+}
 
 .xbox .dpad {
   width: 144px;
@@ -87,17 +106,51 @@ body {
   left: 71px;
   top: 196px;
 }
+
 .xbox .face {
   background: url(https://i.imgur.com/hCmzXWK.png);
   position: absolute;
   opacity: 0;
 }
-.xbox .face.up { background-position: 0 -68px; width: 52px; height: 63px; left: 46px; }
-.xbox .face.down { background-position: -54px 63px; width: 52px; height: 63px; left: 46px; top: 81px; }
-.xbox .face.left { background-position: -108px -68px; width: 64px; height: 52px; left: -1px; top: 47px; }
-.xbox .face.right { background-position: -175px -68px; width: 63px; height: 52px; left: 81px; top: 46px; }
 
-.xbox .bumpers { width: 620px; height: 35px; left: 93px; top: 114px; }
+.xbox .face.up {
+  background-position: 0 -68px;
+  width: 52px;
+  height: 63px;
+  left: 46px;
+}
+
+.xbox .face.down {
+  background-position: -54px 63px;
+  width: 52px;
+  height: 63px;
+  left: 46px;
+  top: 81px;
+}
+
+.xbox .face.left {
+  background-position: -108px -68px;
+  width: 64px;
+  height: 52px;
+  left: -1px;
+  top: 47px;
+}
+
+.xbox .face.right {
+  background-position: -175px -68px;
+  width: 63px;
+  height: 52px;
+  left: 81px;
+  top: 46px;
+}
+
+.xbox .bumpers {
+  width: 620px;
+  height: 35px;
+  left: 93px;
+  top: 114px;
+}
+
 .xbox .bumper {
   background: url(https://i.imgur.com/2YssqRT.png);
   width: 110px;
@@ -105,46 +158,50 @@ body {
   opacity: 0;
 }
 
-.xbox .triggers { width: 619px; height: 108px; left: 94px; }
+.xbox .triggers {
+  width: 619px;
+  height: 108px;
+  left: 94px;
+}
+
 .xbox .trigger {
   background: url(https://i.imgur.com/LsxmGBD.png);
   width: 111px;
   height: 108px;
   opacity: 0;
 }
-.xbox .trigger.right { background-position: -113px 0; transform: rotateY(0); }
 
-/* touchpad */
+.xbox .trigger.right {
+  background-position: -113px 0;
+  transform: rotateY(0);
+}
+
 .xbox .touchpad {
   width: 333px;
   height: 177px;
   position: absolute;
   left: 237px;
   top: 118px;
-  z-index: 60;
 }
 
-/* FIXED: must be i.imgur.com */
 .xbox .touchpad.pressed {
   background: url(https://i.imgur.com/78UZdwp.png) no-repeat center;
 }
 
-/* Rio text */
-.xbox .touchpad::after{
+.xbox .touchpad::after {
   content: "Rio";
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   font-family: Arial, sans-serif;
-  font-size: 46px;
+  font-size: 44px;
   letter-spacing: 2px;
-  color: rgba(122,31,74,1);
-  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
   pointer-events: none;
 }
 
-/* PS button */
 .xbox .meta {
   width: 51px;
   height: 40px;
@@ -153,7 +210,6 @@ body {
   bottom: 255px;
 }
 
-/* FIXED: must be i.imgur.com */
 .xbox .meta.pressed {
   background: url(https://i.imgur.com/vJ4YyEZ.png) no-repeat center;
 }
