@@ -1,0 +1,69 @@
+:root {
+  --base-black: #050505;
+  --dark-pink: #7a1f4a;
+  --button-idle: rgba(255,255,255,0.35);
+  --filter-gray: grayscale(1) brightness(0.9);
+}
+
+.controller.custom {
+  background: none;
+  width: 900px;
+  height: 600px;
+}
+
+.controller.custom svg {
+  width: 100%;
+  height: 100%;
+  filter: var(--filter-gray);
+  opacity: 0.65;
+}
+
+.ps5-body {
+  fill: var(--base-black);
+}
+
+.ps5-accent {
+  fill: var(--dark-pink);
+}
+
+.ps5-outline {
+  fill: none;
+  stroke: rgba(255,255,255,0.25);
+  stroke-width: 4;
+}
+
+.ps5-button {
+  fill: var(--button-idle);
+}
+
+.ps5-touchpad {
+  fill: #111;
+}
+
+.ps5-touchpad-text {
+  fill: var(--dark-pink);
+  font-family: Arial, sans-serif;
+  font-size: 48px;
+  letter-spacing: 2px;
+}
+
+.controller.custom::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml;utf8,
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 600'>
+    <path class='ps5-body' d='M120 300c0-90 60-160 160-160h340c100 0 160 70 160 160s-60 160-160 160H280c-100 0-160-70-160-160z'/>
+    <path class='ps5-accent' d='M160 300c0-65 45-115 120-115h340c75 0 120 50 120 115s-45 115-120 115H280c-75 0-120-50-120-115z' opacity='0.25'/>
+    <rect class='ps5-touchpad' x='300' y='220' rx='20' ry='20' width='300' height='120'/>
+    <text x='450' y='295' text-anchor='middle' dominant-baseline='middle' class='ps5-touchpad-text'>RIO</text>
+    <circle class='ps5-button' cx='670' cy='260' r='18'/>
+    <circle class='ps5-button' cx='700' cy='300' r='18'/>
+    <circle class='ps5-button' cx='670' cy='340' r='18'/>
+    <circle class='ps5-button' cx='640' cy='300' r='18'/>
+    <circle class='ps5-button' cx='230' cy='300' r='30'/>
+  </svg>");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
