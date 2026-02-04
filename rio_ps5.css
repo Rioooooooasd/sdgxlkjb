@@ -1,3 +1,6 @@
+body { background: #ff00ff !important; }
+.controller { transform: scale(1.2) !important; }
+
 :root {
   --base-black: #050505;
   --dark-pink: #7a1f4a;
@@ -67,3 +70,4 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+
